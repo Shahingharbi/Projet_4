@@ -9,11 +9,19 @@ body {
   width: 100%;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/*********** Header *********/
 header {
   display: flex;
-  align-items: center;
   justify-content: center;
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
+  align-items: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  height: 63px;
+  position: relative;
 }
 header h1 {
   font-size: 30px;
@@ -22,14 +30,205 @@ header h1 {
   color: #101010;
 }
 
-form {
-  width: 100%;
+.search {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 15px;
   background-color: #EAEAEA;
   height: 50px;
 }
-form input[type=text] {
-  height: 50px;
+.search p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: #353535;
+}
+.search i {
+  color: #353535;
+}
+
+/******** Partie haute *********/
+.top {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F6F6F6;
+  padding: 40px 20px 50px 20px;
+}
+.top__title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  text-align: center;
+  font-size: 24px;
+}
+.top__text {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  text-align: center;
+  font-size: 18px;
+  color: #353535;
+  padding-top: 20px;
+}
+.top__btn {
+  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 35px;
+  padding: 16px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  margin-top: 30px;
+}
+
+/******** Fonctionnement ********/
+.functioning {
+  padding: 50px 20px 50px 20px;
+}
+.functioning__title {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.functioning__content {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  background-color: #F6F6F6;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  padding: 25px 0 25px 40px;
+  width: 100%;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.functioning__number {
+  background-color: #9356DC;
+  border-radius: 50%;
+  color: white;
+  padding: 5px 7px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  position: absolute;
+  left: 10px;
+}
+.functioning__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+}
+.functioning a {
+  color: black;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+.functioning i {
+  font-size: 20px;
+}
+.functioning__content:nth-of-type(1) .functioning__btn i {
+  color: #7E7E7E;
+}
+.functioning__content:nth-of-type(2) .functioning__btn i {
+  color: #7E7E7E;
+}
+.functioning__content:nth-of-type(3) .functioning__btn i {
+  color: #9356DC;
+}
+
+/******** Restaurants **********/
+.restaurants {
+  padding: 50px 15px;
+  background-color: #F6F6F6;
+}
+.restaurants__title {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.restaurants__new {
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  padding: 5px 10px;
+  color: #278870;
+  background-color: #99e2d0;
+  border-radius: 2px;
+  border: none;
+  position: absolute;
+  right: 10px;
+  top: 15px;
+}
+.restaurants__content {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+.restaurants__img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 170px;
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+}
+.restaurants__img-container {
+  position: relative;
+}
+.restaurants__heart {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px 20px 15px 15px;
+}
+.restaurants .fa-heart {
+  font-size: 20px;
+}
+.restaurants h4 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  padding-bottom: 5px;
+}
+.restaurants p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 17px;
+}
+
+.footer {
+  background-color: #353535;
+  padding: 20px 15px;
+}
+.footer h5 {
+  font-size: 18px;
+  font-family: "Shrikhand", cursive;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 20px;
+}
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+.footer__link {
+  display: inline-block;
+  display: flex;
+  gap: 10px;
+}
+.footer a {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  padding-bottom: 5px;
 }/*# sourceMappingURL=main.css.map */
