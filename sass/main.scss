@@ -1,5 +1,6 @@
 @import "./utils/mixins";
 @import "./utils/variables";
+@import "./pages/restaurants";
 
 
 
@@ -225,7 +226,6 @@ header {
 }
 
 .footer {
-    
     background-color: #353535;
     padding: 20px 15px;
 
@@ -258,6 +258,8 @@ header {
 
             
     }     
+
+    
 
 
 
