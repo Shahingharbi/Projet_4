@@ -1,5 +1,66 @@
+@import "./variables";
+
 @mixin flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@mixin loader {
+    height: 1200px;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    background-color : $color-primary;
+    opacity: 1;
+    @include flex-center;
+    flex-direction: column-reverse;
+    animation: load 300ms forwards;
+    animation-delay: 2s;
+}
+
+@mixin title-style {
+    font-family: $text-font;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+@mixin btn-style {
+    color: white;
+    font-family: $text-font;
+    font-weight: 500;
+    border-radius: 35px;
+    padding: 16px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    margin-top: 30px;
+    transition: all 500ms ease-in-out;
+    background: $color-background;
+    letter-spacing: 1px;
+}
+
+@mixin heart {
+    content: "\f004";
+    position: relative;
+    font-weight: 900;
+    color: #9356DC;
+    background-image: $color-background;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    opacity: 0;
+    transition: all 900ms ease-in-out;
+}
+
+@mixin new {
+    font-weight: 500;
+    font-family: $text-font;
+    font-size: 16px;
+    padding: 5px 10px;
+    color: #278870;
+    background-color: #99e2d0;
+    border-radius: 2px;
+    border: none;
+    position: absolute;
+    right: 10px;
+    top: 15px;
 }

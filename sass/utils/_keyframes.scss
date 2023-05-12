@@ -1,0 +1,56 @@
+@keyframes load {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+}
+@keyframes border {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+    
+}
+
+@keyframes text {
+    
+    50%  { opacity: 0.5;
+        color: $color-tertiary; 
+    }
+
+    70% {
+        opacity: 1;
+        color: $color-secondary;
+    }
+
+    100% {
+        opacity: 0.3;
+        color: $color-tertiary;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes fade-in {
+    from {
+      opacity: 0; 
+    }
+  
+    to {
+      opacity: 1; 
+    }
+  }

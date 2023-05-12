@@ -1,0 +1,119 @@
+/**************** TABLETTE **************/
+
+@media (min-width : 768px) and (max-width : 1024px) {
+    body {
+        max-width: 1024px;
+    }
+    .functioning {
+        &__container {
+            display: flex;
+            flex-direction: row;
+            gap: 10px 50px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        &__content {
+            width: auto;
+            padding-right: 20px;
+        }
+    }
+
+    .restaurants {
+        padding: 50px 20px;
+        &__card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 40px 90px;
+            justify-content: center;
+            align-items: center;
+        }
+        &__content {
+            width: 100%;
+            margin: 0;
+        }
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 40px;
+        padding: 80px 30px 20px 0;
+        h5 {
+            order: 2;
+            margin: 0;
+            padding-bottom: 15px;
+        }
+        &__content {
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+        }
+        &__link:nth-child(2) {
+            padding-right: 20px;
+        }
+    } 
+}
+
+    /************* DEKSTOP ***********/
+
+    @media (min-width: 1024px)  {
+        body {
+            max-width: none;
+        }
+        .functioning {
+            padding: 50px 10%;
+            &__container {
+                display: flex;
+                flex-direction: row;
+                gap: 10px 50px;
+                flex-wrap: nowrap;
+                align-items: center;
+            }
+            &__content {
+                width: 100%;
+                padding-right: 10px;
+            }
+        }
+
+        .restaurants {
+            padding: 50px 10%;
+            &__card {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                gap: 40px 90px;
+                justify-content: center;
+                align-items: center;
+            }
+            &__content {
+                width: 100%;
+                margin: 0;
+            }
+        }
+
+        .footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 80px;
+            padding: 80px 50px 20px 0;
+            h5 {
+                order: 2;
+                margin: 0;
+                padding-bottom: 15px;
+            }
+            &__content {
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+            }
+            &__link:nth-child(2) {
+                padding-right: 50px;
+            }
+        } 
+    }

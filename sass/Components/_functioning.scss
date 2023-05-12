@@ -1,0 +1,58 @@
+.functioning {
+    padding: 50px 20px 50px 20px;
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
+    &__title {
+        @include title-style;
+        margin-bottom: 30px;
+    }
+        &__content {
+        display: inline-flex;
+        align-items: center;
+        gap: 15px;
+        background-color: #F6F6F6;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+        border-radius: 20px;
+        padding: 25px 0  ;
+        width: 100%;
+        margin-bottom: 20px;
+        cursor: pointer;
+        &:nth-of-type(1) .functioning__btn i {
+            color: #7E7E7E;
+          }
+            &:nth-of-type(2) .functioning__btn i {
+            color: #7E7E7E;
+          }
+                &:nth-of-type(3) .functioning__btn i {
+                color: $color-primary;
+          }
+    }
+    &__number {
+        background-color: $color-primary;
+        border-radius: 50%;
+        color: white;
+        padding: 5px 7px;
+        font-family: $text-font;
+        font-weight: 500;
+        font-size: 14px;
+        position: relative;
+        right: 12px;
+    }
+    &__btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 20px;
+        a {
+            color: black;
+            font-family: $text-font;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+        }
+        i {
+           font-size: 20px;
+        }
+    }
+}
