@@ -21,8 +21,80 @@ body{
 
 a {
     text-decoration: none;
-    color: black
+    color: black;
 }
+                                            /********** Loader *********/
+.loader {
+    height: 1200px;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    background-color : $color-primary;
+    opacity: 1;
+    @include flex-center;
+    flex-direction: column-reverse;
+    animation: load 300ms forwards;
+    animation-delay: 2s;
+    &__circle {
+        width: 230px;
+        height: 230px;
+        border-radius: 100%;
+        border:  15px dotted $color-tertiary ;
+        position: relative;
+        bottom: 300px;
+        @include flex-center;
+        animation: border 1700ms linear infinite;
+        
+    }
+    &__txt {
+        font-size: 22px;
+        font-family: $title-font;
+        font-weight: 500;
+        color: $color-secondary;
+        animation: text 1s linear infinite;
+    }
+
+}
+
+@keyframes load {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+}
+@keyframes border {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+    
+}
+
+@keyframes text {
+    
+    50%  { opacity: 0.5;
+        color: $color-tertiary; 
+    }
+
+    70% {
+        opacity: 1;
+        color: $color-secondary;
+    }
+
+    100% {
+        opacity: 0.3;
+        color: $color-tertiary;
+    }
+  
+}
+
+
 
                                             /*********** Header *********/
 header {
@@ -103,6 +175,11 @@ header {
 
 .functioning {
     padding: 50px 20px 50px 20px;
+    &__container {
+        display: flex;
+        flex-direction: column;
+        
+    }
     &__title {
         font-family: $text-font;
         font-size: 24px;
@@ -116,10 +193,20 @@ header {
         background-color: #F6F6F6;
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
         border-radius: 20px;
-        padding: 25px 0 25px 40px ;
+        padding: 25px 0  ;
         width: 100%;
         margin-bottom: 20px;
         cursor: pointer;
+        &:nth-of-type(1) .functioning__btn i {
+            color: #7E7E7E;
+          }
+            &:nth-of-type(2) .functioning__btn i {
+            color: #7E7E7E;
+          }
+                &:nth-of-type(3) .functioning__btn i {
+                color: $color-primary;
+          }
+
         
     }
             &__number {
@@ -130,8 +217,8 @@ header {
             font-family: $text-font;
             font-weight: 500;
             font-size: 14px;
-            position: absolute;
-            left: 10px;
+            position: relative;
+            right: 12px;
     }
 
             &__btn {
@@ -152,17 +239,6 @@ header {
         font-size: 20px;
     }
 
-    &__content {
-          &:nth-of-type(1) .functioning__btn i {
-            color: #7E7E7E;
-          }
-            &:nth-of-type(2) .functioning__btn i {
-            color: #7E7E7E;
-          }
-                &:nth-of-type(3) .functioning__btn i {
-                color: $color-primary;
-          }
-        }
       
 }
 
@@ -285,8 +361,157 @@ header {
                 }
 
             
-    }     
+    }    
 
+    /******************** TABLETTE ******************/
+
+    @media (min-width : 768px) and (max-width : 1024px) {
+
+        body {
+            max-width: 1024px;
+        }
+
+        .functioning {
+           
+            &__container {
+                display: flex;
+                flex-direction: row;
+                gap: 10px 50px;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                
+            }
+            &__content {
+                width: auto;
+                padding-right: 20px;
+            }
+        }
+
+        .restaurants {
+            padding: 50px 20px;
+            &__card {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                gap: 40px 90px;
+                justify-content: center;
+                align-items: center;
+
+            }
+            &__content {
+                width: 100%;
+                margin: 0;
+            }
+        }
+
+        .footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 40px;
+            padding: 80px 30px 20px 0;
+            h5 {
+                order: 2;
+                margin: 0;
+                padding-bottom: 15px;
+            }
+            &__content {
+                display: flex;
+                flex-direction: row;
+                gap: 12px;
+            }
+            &__link:nth-child(2) {
+                padding-right: 20px;
+            }
+        } 
+    }
+
+        /************* DEKSTOP ***********/
+
+        @media (min-width: 1024px) and (max-width : 1440px) {
+            body {
+                max-width: 1440px;
+            }
+    
+            .functioning {
+                padding: 50px 10% ;
+               
+                &__container {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 10px 50px;
+                    flex-wrap: nowrap;
+                    align-items: center;
+                    justify-content: baseline;
+                    
+                }
+                &__content {
+                    width: 100%;
+                    padding-right: 10px;
+                }
+            }
+    
+            .restaurants {
+                padding: 50px 10%;
+                &__card {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: 1fr 1fr;
+                    gap: 40px 90px;
+                    justify-content: center;
+                    align-items: center;
+    
+                }
+                &__content {
+                    width: 100%;
+                    margin: 0;
+                }
+            }
+    
+            .footer {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 80px;
+                padding: 80px 50px 20px 0;
+                h5 {
+                    order: 2;
+                    margin: 0;
+                    padding-bottom: 15px;
+                }
+                &__content {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 20px;
+                }
+                &__link:nth-child(2) {
+                    padding-right: 50px;
+                }
+            } 
+        }
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
     
 
 

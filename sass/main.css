@@ -6,7 +6,7 @@
 }
 .header a {
   position: absolute;
-  left: 5%;
+  left: 2%;
   color: #353535;
 }
 .header i {
@@ -19,6 +19,7 @@
   -o-object-position: center;
      object-position: center;
   width: 100%;
+  height: 300px;
 }
 
 .main {
@@ -31,6 +32,7 @@
   position: relative;
   top: -40px;
   padding: 25px 15px 50px;
+  overflow: hidden;
 }
 .menu__top {
   display: flex;
@@ -85,6 +87,7 @@
   box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   cursor: pointer;
+  overflow: hidden;
 }
 .menu__price {
   display: flex;
@@ -155,27 +158,26 @@
 }
 
 .menu__content:hover .menu__validation {
-  position: relative;
-  right: 0;
-  visibility: visible;
+  margin-right: 0;
 }
 
 .menu__validation {
-  position: absolute;
-  right: -90px;
-  height: 67px;
-  transition: all 300ms ease;
-  visibility: hidden;
+  margin-right: -80px;
+  transition: margin-right 300ms ease;
 }
 
 .menu__content:hover .menu__validation i {
-  transform: rotate(360deg);
+  animation: rotate 800ms ease;
 }
 
-.menu__validation i {
-  transition: all 500ms ease;
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
-
 .menu__starter,
 .menu__dish,
 .menu__dessert {
@@ -202,6 +204,20 @@
     opacity: 1;
   }
 }
+/*********** Tablette ***********/
+@media (min-width: 768px) {
+  .img {
+    height: 300px;
+  }
+  .menu {
+    padding: 25px 15% 50px;
+    margin: 0 12%;
+  }
+  .menu__top {
+    justify-content: center;
+    gap: 30px;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -218,6 +234,72 @@ a {
   color: black;
 }
 
+/********** Loader *********/
+.loader {
+  height: 1200px;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  background-color: #9356DC;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+  animation: load 300ms forwards;
+  animation-delay: 2s;
+}
+.loader__circle {
+  width: 230px;
+  height: 230px;
+  border-radius: 100%;
+  border: 15px dotted #99E2D0;
+  position: relative;
+  bottom: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: border 1700ms linear infinite;
+}
+.loader__txt {
+  font-size: 22px;
+  font-family: "Shrikhand", cursive;
+  font-weight: 500;
+  color: #FF79DA;
+  animation: text 1s linear infinite;
+}
+
+@keyframes load {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes border {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes text {
+  50% {
+    opacity: 0.5;
+    color: #99E2D0;
+  }
+  70% {
+    opacity: 1;
+    color: #FF79DA;
+  }
+  100% {
+    opacity: 0.3;
+    color: #99E2D0;
+  }
+}
 /*********** Header *********/
 header {
   display: flex;
@@ -297,6 +379,10 @@ header h1 {
 .functioning {
   padding: 50px 20px 50px 20px;
 }
+.functioning__container {
+  display: flex;
+  flex-direction: column;
+}
 .functioning__title {
   font-family: "Roboto", sans-serif;
   font-size: 24px;
@@ -310,10 +396,19 @@ header h1 {
   background-color: #F6F6F6;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
   border-radius: 20px;
-  padding: 25px 0 25px 40px;
+  padding: 25px 0;
   width: 100%;
   margin-bottom: 20px;
   cursor: pointer;
+}
+.functioning__content:nth-of-type(1) .functioning__btn i {
+  color: #7E7E7E;
+}
+.functioning__content:nth-of-type(2) .functioning__btn i {
+  color: #7E7E7E;
+}
+.functioning__content:nth-of-type(3) .functioning__btn i {
+  color: #9356DC;
 }
 .functioning__number {
   background-color: #9356DC;
@@ -323,8 +418,8 @@ header h1 {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 14px;
-  position: absolute;
-  left: 10px;
+  position: relative;
+  right: 12px;
 }
 .functioning__btn {
   display: inline-flex;
@@ -340,15 +435,6 @@ header h1 {
 }
 .functioning i {
   font-size: 20px;
-}
-.functioning__content:nth-of-type(1) .functioning__btn i {
-  color: #7E7E7E;
-}
-.functioning__content:nth-of-type(2) .functioning__btn i {
-  color: #7E7E7E;
-}
-.functioning__content:nth-of-type(3) .functioning__btn i {
-  color: #9356DC;
 }
 
 /******** Restaurants **********/
@@ -458,4 +544,116 @@ header h1 {
   font-weight: 500;
   font-size: 16px;
   padding-bottom: 5px;
+}
+
+/******************** TABLETTE ******************/
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    max-width: 1024px;
+  }
+  .functioning__container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px 50px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .functioning__content {
+    width: auto;
+    padding-right: 20px;
+  }
+  .restaurants {
+    padding: 50px 20px;
+  }
+  .restaurants__card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 40px 90px;
+    justify-content: center;
+    align-items: center;
+  }
+  .restaurants__content {
+    width: 100%;
+    margin: 0;
+  }
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 40px;
+    padding: 80px 30px 20px 0;
+  }
+  .footer h5 {
+    order: 2;
+    margin: 0;
+    padding-bottom: 15px;
+  }
+  .footer__content {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+  }
+  .footer__link:nth-child(2) {
+    padding-right: 20px;
+  }
+}
+/************* DEKSTOP ***********/
+@media (min-width: 1024px) and (max-width: 1440px) {
+  body {
+    max-width: 1440px;
+  }
+  .functioning {
+    padding: 50px 10%;
+  }
+  .functioning__container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px 50px;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: baseline;
+  }
+  .functioning__content {
+    width: 100%;
+    padding-right: 10px;
+  }
+  .restaurants {
+    padding: 50px 10%;
+  }
+  .restaurants__card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 40px 90px;
+    justify-content: center;
+    align-items: center;
+  }
+  .restaurants__content {
+    width: 100%;
+    margin: 0;
+  }
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 80px;
+    padding: 80px 50px 20px 0;
+  }
+  .footer h5 {
+    order: 2;
+    margin: 0;
+    padding-bottom: 15px;
+  }
+  .footer__content {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .footer__link:nth-child(2) {
+    padding-right: 50px;
+  }
 }/*# sourceMappingURL=main.css.map */
