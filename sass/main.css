@@ -1,4 +1,6 @@
-
+@import "/sass/main.css";
+/********** Header **********/
+@import "./main.css";
 .header {
   display: inline-flex;
   width: 100%;
