@@ -1,6 +1,5 @@
 @import "/sass/main.css";
 /********** Header **********/
-@import "./main.css";
 .header {
   display: inline-flex;
   width: 100%;
@@ -624,7 +623,7 @@ a {
     gap: 80px;
     padding: 80px 50px 20px 0;
   }
-  .footer h5 {
+  .footer h6 {
     order: 2;
     margin: 0;
     padding-bottom: 15px;
