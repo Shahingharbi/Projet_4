@@ -487,7 +487,7 @@ a {
 .restaurants__heart .fa-heart {
   font-size: 20px;
 }
-.restaurants__heart h4 {
+.restaurants__heart h5 {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: 18px;
@@ -503,7 +503,7 @@ a {
   background-color: #353535;
   padding: 20px 15px;
 }
-.footer h5 {
+.footer h6 {
   font-size: 18px;
   font-family: "Shrikhand", cursive;
   font-weight: 400;
